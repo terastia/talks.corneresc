@@ -1,0 +1,11 @@
+{
+    "/prxy": {
+      "target": "https://api.lnco.in",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/prxy": ""
+      }
+    }
+  }
+  

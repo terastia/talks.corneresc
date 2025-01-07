@@ -7,20 +7,21 @@
 
 import config from '@services/config.json';
 
-const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath } = config as {
+const { domain, clientId, authorizationParams: { audience }, apiUri, proxy, errorPath } = config as {
     domain: string;
     clientId: string;
     authorizationParams: {
         audience: string;
     };
     apiUri: string;
+    proxy: string;
     errorPath: string;
 };
 
 
 export const environment = {
     production: false,
-    apiUri: apiUri, // need to disable as http intercepter get to be in place.
+    apiUri: proxy, // need to disable as http intercepter get to be in place.
     auth: {
         domain,
         clientId,

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { StoriesResolver } from '@components/stories/stories.resolver';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,8 @@ export const routes: Routes = [
         path: 'stories',
         title: 'stories',
         loadComponent: async () => (await import('../stories/stories.component')).StoriesComponent,
+        resolve: {
+            data: StoriesResolver,
+        },
     },
 ];

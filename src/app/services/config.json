@@ -5,6 +5,7 @@
     "audience": "https://auth.lnco.in/"
   },
   "apiUri": "https://api.lnco.in/",
+  "proxy": "/prxy",
   "appUri": "https://lnco-artifacts.vercel.app",
   "errorPath": "/error"
 }
