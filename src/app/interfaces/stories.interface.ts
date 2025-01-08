@@ -1,15 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-export interface Article {
-    id: string;
-    author: string | undefined;
-    blocks: BlocksEntity[];
-    time: number;
-    version: string;
-    username: string | undefined;
-    content_length: string;
-    tag: Tag[];
-    highlight: Highlight;
-}
+
 
 export interface BlocksEntity {
     data: Data;
@@ -17,7 +6,7 @@ export interface BlocksEntity {
     type: string;
 }
 
-export interface Data {
+interface Data {
     level?: number | null;
     text?: string | null;
     caption?: string | null;
@@ -58,7 +47,7 @@ export interface Highlight extends Highlights {
     time?: string;
 }
 
-export interface Artifact {
+export interface Post {
     id: string;
     createdDate: string;
     img: string;

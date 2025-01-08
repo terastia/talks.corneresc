@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, RouterModule } from '@angular/router';
 import { Observable, delay, map } from 'rxjs';
-import { Artifact } from 'src/app/interfaces/stories.interface';
+import { Post } from 'src/app/interfaces/stories.interface';
 
 @Component({
   selector: 'stories',
@@ -13,11 +13,11 @@ import { Artifact } from 'src/app/interfaces/stories.interface';
 export class StoriesComponent implements OnInit {
   _route = inject(ActivatedRoute);
 
-  public post$!: Observable<Artifact[]>;
+  public post$!: Observable<Post[]>;
 
   ngOnInit(): void {
     this._route.data.subscribe(({ data }: Data) => {
-      const fact = data as { record: Observable<Artifact[]> };
+      const fact = data as { record: Observable<Post[]> };
       this.post$ = fact.record;
       // do something with your resolved data ...
       fact.record.subscribe({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http-client-wrapper.service';
 import { Observable, combineLatest, filter, from, map, take } from 'rxjs';
-import { Artifact, BlocksEntity, Tag } from 'src/app/interfaces/stories.interface';
+import { Post, BlocksEntity, Tag } from 'src/app/interfaces/stories.interface';
 import { InShort, _Record, Compose, _Meta, SecRecord, _Document } from 'src/app/interfaces/record';
 
 const PREFIX = 'api/v2';
@@ -12,12 +12,12 @@ const PREFIX = 'api/v2';
 export class ArtifactService {
     constructor(protected httpService: HttpService) {}
 
-    public getArtifacts(): Observable<Artifact[]> {
-        return this.httpService.get<Artifact[]>(`${PREFIX}/fetch`);
+    public getArtifacts(): Observable<Post[]> {
+        return this.httpService.get<Post[]>(`${PREFIX}/fetch`);
     }
 
-    public getJournalForSignedInUser(): Observable<Artifact[]> {
-        return this.httpService.get<Artifact[]>(`${PREFIX}/user/journal`);
+    public getJournalForSignedInUser(): Observable<Post[]> {
+        return this.httpService.get<Post[]>(`${PREFIX}/user/journal`);
     }
 
     public getArtifactsById(id: string): Observable<SecRecord> {

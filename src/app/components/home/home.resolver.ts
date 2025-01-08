@@ -3,16 +3,16 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { ArtifactService } from '@services/stories/stories.service';
 
 import { Observable, delay, map, take } from 'rxjs';
-import { Artifact } from 'src/app/interfaces/stories.interface';
+import { Post } from 'src/app/interfaces/stories.interface';
 
 @Injectable({ providedIn: 'root' })
 export class HomeResolver
-    implements Resolve<{ record: Observable<Artifact[]> }> {
+    implements Resolve<{ record: Observable<Post[]> }> {
     constructor(private _artifact: ArtifactService) { }
     resolve(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot,
-    ): { record: Observable<Artifact[]> } {
+    ): { record: Observable<Post[]> } {
         state;
 
         return {
