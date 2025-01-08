@@ -1,20 +1,30 @@
-<a href="/in/products/leather-backpack" class="group mx-auto max-w-sm block">
-    <div>
-        <div
-            class="rounded-lg relative overflow-hidden p-4 rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150 aspect-[11/14] w-full border">
-            <img alt="Thumbnail" draggable="false" loading="lazy" decoding="async" data-nimg="fill"
-                class="absolute inset-0 object-cover object-center"
-                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-                srcset="https://next.medusajs.com/_next/image?url=https%3A%2F%2Fmedusa-server-testing.s3.us-east-1.amazonaws.com%2Fbag-nobg-1700675158493.png&w=1920&q=50"
-                src="https://next.medusajs.com/_next/image?url=https%3A%2F%2Fmedusa-server-testing.s3.us-east-1.amazonaws.com%2Fbag-nobg-1700675158493.png&w=1920&q=50">
-        </div>
-        <div class="flex txt-compact-medium mt-4 justify-between">
-            <p class="font-normal font-sans txt-medium text-ui-fg-subtle">Pinnacle Posh Pack</p>
-            <div class="flex items-center gap-x-2">
-                <p class="font-normal font-sans txt-medium text-ui-fg-muted">₹3,500.00</p>
+<ng-container *ngIf="artifacts$ | async as artifacts;">
+    @for (item of artifacts; track $index) {
+    <a href="/in/products/leather-backpack" class="group block mb-8 pb-2">
+        <div class="">
+            <!-- <div class="flex justify-end items-center gap-x-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+            </div> -->
+            <!-- <div
+                class="relative max-h-[60vh] overflow-hidden group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150  w-full border">
+                <img alt="Thumbnail" draggable="false" loading="lazy" decoding="async" data-nimg="fill"
+                    class="inset-0 object-cover object-center h-auto" [srcset]="item.forepart" [src]="item.forepart">
+            </div> -->
+            <div class="flex flex-col  mt-4 gap-y-2 justify-between">
+                <p class="text-sm font-sans">{{ item.modifiedDate | date}}</p>
+                <p class="font-semibold font-sans">{{ item.head}}</p>
+
+                <p class="font-normal font-sans text-sm">{{ item.details}}</p>
+
             </div>
         </div>
-    </div>
-</a>
+    </a>
+    }
+</ng-container>
+
+
 <div class="mb-48"></div>

@@ -5,6 +5,6 @@
  * The list of file replacements can be found in `angular.json`.
  * */
 
-import  {environment as env, } from "./environment"
+import  {environment as env } from "./environment"
 
-export const environment: any = {...env, apiUri: './prxy'}
+export const environment = {...env}
