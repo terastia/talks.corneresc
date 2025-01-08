@@ -1,20 +1,20 @@
-<ng-container *ngIf="artifacts$ | async as artifacts;">
-    @for (item of artifacts; track $index) {
-    <a href="/in/products/leather-backpack" class="group block mb-8 pb-2">
-        <div class="">
-            <!-- <div class="flex justify-end items-center gap-x-2 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>
-            </div> -->
-            <!-- <div
-                class="relative max-h-[60vh] overflow-hidden group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150  w-full border">
-                <img alt="Thumbnail" draggable="false" loading="lazy" decoding="async" data-nimg="fill"
-                    class="inset-0 object-cover object-center h-auto" [srcset]="item.forepart" [src]="item.forepart">
-            </div> -->
-            <div class="flex flex-col  mt-4 gap-y-2 justify-between">
+<ng-template #loading>
+   <div class="w-full h-[60vh] flex justify-center items-center">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+        stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"
+        class="animate-spin w-6 h-6 stroke-slate-500">
+        <path
+            d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
+        </path>
+    </svg>
+   </div>
+</ng-template>
+
+<ng-container *ngIf="post$ | async as posts; else loading">
+    @for (item of posts; track $index) {
+    <a [routerLink]="['/post']" [queryParams]="{ page: item.id }" class="group block mb-8 pb-2">
+        <div>
+            <div class="flex flex-col  mt-4 gap-sy-2 justify-between">
                 <p class="text-sm font-sans">{{ item.modifiedDate | date}}</p>
                 <p class="font-semibold font-sans">{{ item.head}}</p>
 
@@ -25,6 +25,5 @@
     </a>
     }
 </ng-container>
-
 
 <div class="mb-48"></div>

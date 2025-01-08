@@ -4,3 +4,110 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.ce-rawtool__textarea {
+    background-color: #E5E5E5;
+    color: #242424;
+}
+
+.cm-editor  {
+    height: unset;
+    padding: 1rem;
+    @apply rounded-md;
+}
+
+.cm-gutters {
+    display: none !important;
+}
+
+.cdx-notify {
+    @apply hidden
+}
+
+.ce-paragraph, .cdx-block {
+    @apply cursor-text;
+}
+  
+.codex-editor__redactor {
+    @apply pb-0;
+}
+
+.image-tool__caption {
+    @apply !hidden;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    @apply mt-0;
+}
+
+h1,
+.h1 {
+    @apply text-2xl;
+    @apply mb-12;
+}
+
+h2,
+.h2 {
+    @apply text-xl;
+    @apply mb-10;
+}
+
+h3,
+.h3 {
+    @apply text-lg;
+    @apply mb-8;
+}
+
+h4,
+.h4 {
+    @apply text-base;
+    @apply mb-6;
+}
+
+h5,
+.h5 {
+    @apply text-base;
+    @apply mb-4;
+}
+
+h6,
+.h6 {
+    @apply text-sm;
+    @apply mb-2;
+}
+
+.display-1 {
+    @apply text-8xl;
+    @apply mb-32;
+}
+
+.display-2 {
+    @apply text-7xl;
+    @apply mb-24;
+}
+
+.display-3 {
+    @apply text-6xl;
+    @apply mb-20;
+}
+
+.display-4 {
+    @apply text-5xl;
+    @apply mb-16;
+}

@@ -1,0 +1,27 @@
+@if (post) {
+    <a routerLink="/stories" class="mb-4 font-light border p-1 inline-block rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+    </a>
+    <h1 class="title font-semibold text-2xl tracking-tighter">
+        {{ post.meta.head }}
+    </h1>
+    <div class="flex justify-between items-center mt-2 mb-8 text-sm">
+        <p class="text-sm text-neutral-600 dark:text-neutral-400"> by <span class="underline underline-offset-4">
+                {{post.meta.author }}</span> on {{ post.meta.modifiedDate | date }}</p>
+    </div>
+} @else if (true) {
+    <div class="w-full h-[60vh] flex justify-center items-center">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"
+            class="animate-spin w-6 h-6 stroke-slate-500">
+            <path
+                d="M12 3v3m6.366-.366-2.12 2.12M21 12h-3m.366 6.366-2.12-2.12M12 21v-3m-6.366.366 2.12-2.12M3 12h3m-.366-6.366 2.12 2.12">
+            </path>
+        </svg>
+    </div>
+}
+
+<div id="editorjs" class="text-sm"></div>
